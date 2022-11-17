@@ -1,0 +1,662 @@
+Factorial Program
+
+package java7;
+
+import java.util.Scanner;
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int fact=1;
+
+        System.out.println("Enter Number For Factorial: ");
+        int n=sc.nextInt();
+        for(int i=1;i<=n;i++)
+        {
+            fact=fact*i;
+        }
+        System.out.println("Factorial is "+fact);
+    }
+}
+
+
+
+PrimeNumbers Program
+
+package java7;
+
+//import java.util.Scanner;
+public class PrimeNumbers {
+  public static void main(String[] args) {
+     // Scanner sc=new Scanner(System.in);
+      int count=1;
+      int i=2;
+
+      System.out.println("First 50 Prime number:");
+      while(count<=50)
+      {
+          int x=0;
+          for(int j=2;j<=i/2;j++)
+          {
+              if(i%j==0)
+              {
+                  x=1;
+                  break;
+              }
+          }
+          if(x==0)
+          {
+              System.out.print(count+"th Prime No = "+i +'\n');
+              count++;
+          }
+          i++;
+      }
+
+  }
+}
+
+
+Sum & Avg Program
+
+package java7;
+
+import java.util.Scanner;
+public class SumAndAvg {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        double no,sum =0, avg;
+        int n;
+
+        System.out.print("How many numbers you want to enter: ");
+        n = in.nextInt();
+        for(int i=0;i<n;++i)
+        {
+            System.out.print("Enter the "+(i+1)+" No: ");
+            no = in.nextDouble();
+            sum = sum+ no;
+        }
+        avg = sum/n;
+        System.out.println("Sum of "+ n+" numbers is "+sum);
+        System.out.println("Avg of " + n + " numbers is "+ avg);
+    }
+}
+
+
+
+
+Calculator Program
+
+package java7;
+
+import java.util.Scanner;
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int choice;
+        int no1, no2 = 0, result;
+        Calculator obj = new Calculator();
+        do {
+
+            System.out.println("1.Add");
+            System.out.println("2.Substract");
+            System.out.println("3.Multiply");
+            System.out.println("4.Divide");
+            System.out.println("5.Factorial");
+            System.out.println("6.Exit");
+            System.out.println("Enter your choice :");
+            choice = in.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter first number");
+                    no1 = in.nextInt();
+
+                    System.out.println("Enter Second Number");
+                    no2 = in.nextInt();
+
+                    obj.setValues(no1, no2);
+                    result = obj.add();
+                    System.out.println("Addition :" + result);
+                    break;
+                case 2:
+                    System.out.println("Enter first number");
+                    no1 = in.nextInt();
+
+                    System.out.println("Enter Second Number");
+                    no2 = in.nextInt();
+
+                    obj.setValues(no1, no2);
+                    result = obj.substract();
+                    System.out.println("Substraction :" + result);
+                    break;
+                case 3:
+                    System.out.println("Enter first number");
+                    no1 = in.nextInt();
+
+                    System.out.println("Enter Second Number");
+                    no2 = in.nextInt();
+
+                    obj.setValues(no1, no2);
+                    result = obj.multiply();
+                    System.out.println("Multiplication :" + result);
+                    break;
+                case 4:
+                    System.out.println("Enter first number");
+                    no1 = in.nextInt();
+
+                    System.out.println("Enter Second Number");
+                    no2 = in.nextInt();
+
+                    obj.setValues(no1, no2);
+                    result = obj.divide();
+                    System.out.println("Division :" + result);
+                    break;
+                case 5:
+                    System.out.println("Enter first number");
+                    no1 = in.nextInt();
+
+                    obj.setValues(no1, no2);
+                    result = obj.factorial();
+                    System.out.println("Factorial of :" + no1 + "is" + result);
+                    break;
+                case 6:
+                    System.out.println("Terminating");
+                    break;
+                default:
+                    System.out.println("Wrong choice");
+                    break;
+            }
+        }
+            while (choice != 6) ;
+    }
+
+    int no1, no2, result;
+    void setValues(int no1, int no2) {
+        this.no1 = no1;
+        this.no2 = no2;
+    }
+    int add() {
+        return no1 + no2;
+    }
+    int substract() {
+        return no1 - no2;
+    }
+    int multiply() {
+        return no1 * no2;
+    }
+    int divide() {
+        return no1 / no2;
+    }
+    int factorial() {
+        int i;
+        result = 1;
+        for (i = 1; i <= no1; ++i) {
+            result *= i;
+        }
+        return result;
+    }
+}
+
+
+
+
+
+Rectangle Program
+
+package java7;
+
+import java.util.Scanner;
+class rect{
+    int width,length;
+    String color;
+
+    void setLength(int a) {
+        length=a;
+    }
+    void setWidth(int a) {
+        width=a;
+    }
+    void setColor(String a) {
+        color =a;
+    }
+    int area(){
+        return(length*width);
+    }
+    String getColor(){
+        return (color);
+    }
+}
+public class rectangle {
+    public static void main(String[] args) {
+        int l,w;
+        String color;
+        Scanner sc = new Scanner(System.in);
+
+        rect rect1 = new rect();
+        System.out.println("Enter the length:");
+        l=sc.nextInt();
+        rect1.setLength(l);
+        System.out.println("Enter the width:");
+        w=sc.nextInt();
+        rect1.setWidth(w);
+        System.out.println("Enter the color:");
+        color=sc.next();
+        rect1.setColor(color);
+
+        rect rect2 =new rect();
+        System.out.println("Enter the length:");
+        l=sc.nextInt();
+        rect2.setLength(l);
+        System.out.println("Enter the width:");
+        w=sc.nextInt();
+        rect2.setWidth(w);
+        System.out.println("Enter the color:");
+        color=sc.next();
+        rect2.setColor(color);
+
+        if(rect1.area()==rect2.area() && rect1.getColor().equals(rect2.getColor())){
+            System.out.println("Matching Reactangles");
+        }
+        else {
+            System.out.println("Non-Matching Rectangles");
+        }
+    }
+}
+
+
+
+
+
+
+Sorting of Words Program
+
+package java7;
+
+//Practical 5-A Alphabetical Ordering of String
+public class Sorting {
+  static String name[] =
+          {"Madras", "Delhi", "Ahmedabad", "Calcutta", "Bombay"};
+
+  public static void main(String args[]) {
+      int size = name.length;
+      String temp = null;
+      for (int i = 0; i < size; i++) {
+          for (int j = i + 1; j < size; j++) {
+              if (name[j].compareTo(name[i]) < 0) {
+//swap the strings
+                  temp = name[i];
+                  name[i] = name[j];
+                  name[j] = temp;
+              }
+          }
+      }
+      for (int i = 0; i < size; i++) {
+          System.out.println(name[i]);
+      }
+  }
+}
+
+
+
+
+
+Sorting of Numbers
+
+package java7;
+
+//Practical 5B-Sorting a list of Numbers
+public class SortingNum {
+  public static void main(String args[])
+  {
+      int number []= {55,40,80,65,71};
+      int n=number.length;
+      System.out.println("Given list : ");
+      for(int i=0;i<n;i++)
+      {
+          System.out.println(" "+number[i]);
+      }
+      System.out.println("\n");
+//Sorting Begins
+      for(int i=0;i<n;i++)
+      {
+          for(int j=i+1;j<n;j++)
+          {
+              if(number[i]<number[j])
+              {
+//interchange values
+                  int temp=number[i];
+                  number[i]=number[j];
+                  number[j]=temp;
+              }
+          }
+      }//Sorting ends
+      System.out.println("Sorted List");
+      for(int i=0;i<n;i++)
+      {
+          System.out.println(" "+number[i]);
+      }
+      System.out.println(" ");
+  }
+}
+
+
+
+
+
+
+
+Constructor Overloading (Box)
+
+package java7;
+
+//package construct_overloading1;
+class Box{
+  double width, height, depth;
+  // constructor used when all dimensions
+  // specified
+  Box(double w, double h, double d)
+  {
+      width = w;
+      height = h;
+      depth = d;
+  }
+  // constructor used when no dimensions
+  // specified
+  Box()
+  {
+      width = height = depth = 0;
+  }
+  // constructor used when cube is created
+  //
+Box(double len)
+  {
+      width = height = depth = len;
+  }
+  // compute and return volume
+  double volume()
+  {
+      return width * height * depth;
+  }
+}
+
+public class construct_box {
+
+  public static void main(String[] args) {
+      // create boxes using the various
+      // constructors
+      Box mybox1 = new Box(10, 20, 15);
+      Box mybox2 = new Box(5);
+      Box mycube = new Box(7);
+      double vol;
+      // get volume of first box
+      vol = mybox1.volume();
+      System.out.println(" Volume of mybox1 is " + vol);
+      // get volume of second box
+      vol = mybox2.volume();
+      System.out.println(" Volume of mybox2 is " + vol);
+      // get volume of cube
+      vol = mycube.volume();
+      System.out.println(" Volume of mycube is " + vol);
+      // TODO Auto-generated method stub
+  }
+
+}
+
+
+
+
+
+
+
+Add_Matrices Program
+
+package java7;
+
+//package add_matrix;
+import java.util.Scanner;
+public class add_matrices {
+
+  public static void main(String[] args) {
+      // TODO Auto-generated method stub
+      int row, col,i,j;
+      Scanner in = new Scanner(System.in);
+
+      System.out.println("Enter the number of rows");
+      row = in.nextInt();
+
+      System.out.println("Enter the number columns");
+      col = in.nextInt();
+
+      int mat1[][] = new int[row][col];
+      int mat2[][] = new int[row][col];
+      int res[][] = new int[row][col];
+
+      System.out.println("Enter the elements of matrix1");
+
+      for ( i= 0 ; i < row ; i++ )
+      {
+          for ( j= 0 ; j < col ;j++ )
+              mat1[i][j] = in.nextInt();
+
+          System.out.println();
+      }
+      System.out.println("Enter the elements of matrix2");
+
+      for ( i= 0 ; i < row ; i++ )
+      {
+
+          for ( j= 0 ; j < col ;j++ )
+              mat2[i][j] = in.nextInt();
+
+          System.out.println();
+      }
+
+      for ( i= 0 ; i < row ; i++ )
+          for ( j= 0 ; j < col ;j++ )
+              res[i][j] = mat1[i][j] + mat2[i][j] ;
+
+      System.out.println("Sum of matrices:-");
+
+      for ( i= 0 ; i < row ; i++ )
+      {
+          for ( j= 0 ; j < col ;j++ )
+              System.out.print(res[i][j]+"\t");
+
+          System.out.println();
+      }
+
+  }
+}
+
+
+
+
+
+
+
+Interface program
+
+package java7;
+
+//Practical 9
+import java.util.Scanner;
+
+class student
+{
+  int rollNo;
+  void getNumber(int n)
+  {
+      rollNo = n;
+  }
+  void putNumber()
+  {
+      System.out.println("Roll No is : " +rollNo);
+  }
+}
+class test extends student
+{
+  int inSem,endSem;
+  void getMarks(int m1, int m2)
+  {
+      inSem = m1;
+      endSem = m2;
+  }
+  void putMarks()
+  {
+      System.out.println("Marks obtained:");
+      System.out.println("Part 1 INSEM marks = "+inSem);
+      System.out.println("Part 2 ENDSEM mark = "+endSem);
+  }
+}
+interface sports
+{
+  int sportsWt = 5;
+  void putWt();
+}
+
+class results extends test implements sports
+{
+  int total;
+  @Override
+  public void putWt()
+  {
+      System.out.println("Sports weight ="+ sportsWt);
+  }
+  void display()
+  {
+      total = inSem+endSem+sportsWt;
+      if (total>100)
+          total=100;
+      putNumber();
+      putMarks();
+      putWt();
+      System.out.println("Total score = "+ total);
+  }
+}
+public class Interface
+{
+
+  public static void main(String[] args)
+  {
+      Scanner input = new Scanner(System.in);
+      results r1=new results();
+
+      System.out.println(" Enter the student's roll number:");
+      int rollno=input.nextInt();
+      r1.getNumber(rollno);
+      System.out.println(" Enter the student's INSEM Marks out of 30:");
+      int inMarks=input.nextInt();
+      System.out.println(" Enter the student's ENDSEM Marks out of 70:");
+      int endMarks=input.nextInt();
+      r1.getMarks(inMarks,endMarks);
+      r1.display();
+
+  }
+}
+
+
+
+
+
+
+
+Inheritance program (Player)
+
+package java7;
+//Practical 7
+public class Player {
+    String name;
+    int age;
+    Player(String n,int a)
+    {name=n; age=a;}
+    void show()
+    {
+        System.out.println("Player name: "+name);
+        System.out.println("Age: "+age);
+    }
+}
+class Cricket extends Player {
+    String type;
+    Cricket (String n,String t,int a)
+    {
+        super(n,a);
+        type = t;
+    }
+    public void show()
+    {
+        super.show();
+        System.out.println("Player type: "+type);
+    }
+}
+class Football extends Player
+{
+    String type;
+    Football (String n,String t,int a)
+    {
+        super(n,a);
+        type = t;
+    }
+    public void show()
+    {
+        super.show();
+        System.out.println("Player type: "+type);
+    }
+}
+class Hockey extends Player{
+    String type;
+    Hockey (String n,String t,int a)
+    {
+        super(n,a);
+        type=t;
+    }
+    public void show()
+    {
+        super.show();
+        System.out.println("Player type: "+type);
+    }
+}
+class Demo {
+    public static void main(String[] args) {
+        Cricket c=new Cricket ("Ankit","Cricket",20);
+        Football f=new Football ("Namrata", "Football",21);
+        Hockey h=new Hockey ("Aditya","Hockey",22);
+        c.show();
+        System.out.println("--------------------------------");
+        f.show();
+        System.out.println("--------------------------------");
+        h.show();
+        System.out.println("--------------------------------");
+    }
+}
+
+
+
+
+
+
+
+
+Exception Handling Program
+
+package java7;
+
+import java.util.Scanner;
+public class Exe {
+  public static void main(String[] args) {
+  int a, b, result;
+ 
+  Scanner input = new Scanner(System.in);
+  System.out.println("Input two integers"); 
+  a = input.nextInt();
+  b = input.nextInt();
+  // try block
+  try {
+    result  = a / b;
+    System.out.println("Result =" + result);
+  }
+  // catch block
+  catch (ArithmeticException e) {
+    System.out.println("Exception caught : Division by zero !! ");
+  }
+  }
+}
+
